@@ -1,5 +1,5 @@
 <footer>
-&copy; <?=date("Y")?> Fiona
+&copy; <?=date("Y")?> Callum Yates
 </footer>
 </body>
 </html>
