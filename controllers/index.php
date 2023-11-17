@@ -1,9 +1,6 @@
 <?php
 $heading = "Home";
 $config = require('config.php');
-$dsn = 'mysql:' . http_build_query($config['database'], '', ';');
-$pdo = new PDO($dsn, 'root', '');
-$statement = $pdo->prepare("select * from books");
-$statement->execute();
-$books = $statement->fetchAll(PDO::FETCH_ASSOC);
+$db = new Database($config['database']);
+$books = $db->query('select * from books')->get();
 require "views/index.view.php";
